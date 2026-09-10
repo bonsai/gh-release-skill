@@ -1,0 +1,31 @@
+version: 1
+
+intent_required: true
+
+tag_pattern: '^v[0-9]+\\.[0-9]+\\.[0-9]+([-.][0-9A-Za-z.-]+)?$'
+
+releaseable:
+  - browser_extension
+  - cli
+  - executable
+  - library_package
+  - deployable_web_app
+  - versioned_dataset
+  - packaged_template
+
+not_releaseable_by_default:
+  - source_only
+  - docs_only
+  - issue
+  - pull_request
+  - workflow_only
+  - ci_only
+  - test_only
+  - internal_config
+  - draft_work
+
+rules:
+  tag_alone_is_not_release: true
+  explicit_release_intent_required: true
+  stable_version_format: semver
+  prefer_draft_when_review_requested: true
